@@ -5,7 +5,7 @@ NBR_DOWN=0
 LOGFILE=/tmp/pinglog.txt
 
 echo "Ping  Results" > $LOGFILE
-for i in $(cat /root/server_list.txt); do
+for i in $(cat /root/server_ping_check/server_list.txt); do
     fping $i >/dev/null
     if [ $? -ne 0 ]; then
         echo "$i is down" >> $LOGFILE
